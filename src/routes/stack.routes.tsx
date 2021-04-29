@@ -2,9 +2,12 @@ import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
+import { onBoarding } from '../pages/Onboarding'
 import { splash } from '../pages/splashScreen'
 
+
 import colors from '../styles/colors'
+
 
 const stack = createStackNavigator()
 
@@ -16,6 +19,9 @@ const Appstacks:React.FC= () => (
         backgroundColor: colors.white
       }
     }}>
+      <stack.Screen
+      name="onboarding"
+      component={onBoarding}/>
       
     <stack.Screen
       name="splash"

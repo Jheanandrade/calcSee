@@ -3117,6 +3117,11 @@ expo-keep-awake@~9.1.2:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.1.2.tgz#b3e52c7bef0ade975ae88637a2bf980f6b573368"
   integrity sha512-CCuEOQUNLYtMA0rt0sQ9u5LlIMH7lDJG7dImoorfKMsP95yHXy8dl3oCdtaz2zbsPgggVYeom9gE+gQu+Ki4rQ==
 
+expo-speech@~9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/expo-speech/-/expo-speech-9.1.0.tgz#623ecd97211d6ad6ecefcaa8033895dd207be636"
+  integrity sha512-5yIMVo1auAwClVnlJnCRyJqKS82IeQXzTCamP4iP4LmHDR5+9sae/D/mD5mX7KV3brWf3n0sEyFhuU7WqgMQvg==
+
 expo-status-bar@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.4.tgz#d8a4c4418b5868c1606969b12bdee85b6fa7d8a4"
