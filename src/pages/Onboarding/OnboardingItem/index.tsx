@@ -3,7 +3,8 @@ import {
 View,
 Text,
 Image,
-useWindowDimensions
+useWindowDimensions, 
+SafeAreaView
 } from 'react-native'
 
 import styles from './styles'
@@ -22,16 +23,22 @@ interface IProps {
 const OnboardingItem: React.FC<IProps> = ({item} : IProps) => {
 
   const {width} = useWindowDimensions()
+
   return (
+
+    <SafeAreaView>
 
     <View style = {[styles.contanier, {width}]}>
 
+      <View style = {styles.contain}> 
       <Image 
       source = {item.image} 
-      style = {[styles.image, {width, resizeMode: 'contain'}]}
+      resizeMode = 'contain'
+      style = {[styles.image, {width}]}
       />
+    </View>
 
-    <View style = {{flex: 0.3}}>
+    <View style = {styles.texts}>
       <Text style = {styles.title}> 
             {item.title} 
             </Text>
@@ -42,6 +49,8 @@ const OnboardingItem: React.FC<IProps> = ({item} : IProps) => {
     </View>
 
     </View>
+
+    </SafeAreaView>
 
   )
 }
