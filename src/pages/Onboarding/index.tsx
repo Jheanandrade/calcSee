@@ -4,7 +4,8 @@ View,
 FlatList,
 ViewToken,
 StyleSheet,
-Animated
+Animated,
+SafeAreaView
 } from 'react-native'
 
 import OnboardingItem from './OnboardingItem'
@@ -22,7 +23,7 @@ export const onBoarding = () => {
   
   const  scrollx = useRef( new Animated.Value(0)).current
 
-  const slidesRef = useRef(null)
+  const slidesRef = useRef<any>(null)
 
   const viewbleItemsChanged  = useRef(({viewableItems}: IPropsViewbleItemsChanged) => {
     
@@ -45,21 +46,19 @@ export const onBoarding = () => {
 
   return (
 
-    <View style = {styles.contanier}>
+    <SafeAreaView style = {styles.contanier}>
       
-      <View>
+      <View style = {styles.contain}>
           <FlatList
                 data = {slides}
                 renderItem = {({item}) => <OnboardingItem item = {item}/> }
                 horizontal
-                showsHorizontalScrollIndicator
+                showsHorizontalScrollIndicator = {false}
                 pagingEnabled
                 bounces = {false}
                 keyExtractor = {(item) => item.id}
-                onScroll = {Animated.event([{nativeEvent: {contentOffset:{x: scrollx}}}],
-                
+                onScroll = {Animated.event([{nativeEvent: {contentOffset:{x: scrollx}}}],         
                   {useNativeDriver: false}
-
                 )}
                 scrollEventThrottle = {32}
                 onViewableItemsChanged = {viewbleItemsChanged}
@@ -68,11 +67,11 @@ export const onBoarding = () => {
           />
       </View>
 
-      <View>
+      <View style = {styles.form}>
           <NextButton scrollTo = {toScroll} percentage = {(currentIndex + 1) * (100 / slides.length)}/>
       </View>
       
-    </View>
+    </SafeAreaView>
 
   )
 }
@@ -82,6 +81,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  contain: {
+    flex: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    paddingTop: 100,
+    
+  },
+  form: {
+    flex: 0.2,
+    width: '100%',
+    height: '100%'
   }
 })
 

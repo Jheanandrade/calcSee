@@ -1,4 +1,4 @@
 export default {
-  white: '#fff',
-  black: '#000'
+  title: '#22333b',
+  subTitle: '#22333b'
 }

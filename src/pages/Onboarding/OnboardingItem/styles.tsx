@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native'
 
-import colors from '../../styles/colors'
+import colors from '../../../styles/colors'
+import fonts from '../../../styles/fonts'
 
 const styles = StyleSheet.create({
 
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
   },
 
   contain: {
-    flex: 1,
+    flex: 0.4,
     justifyContent: 'center',
     alignContent: 'center',
   },
@@ -19,27 +20,28 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
-    alignContent: 'center'
-    
+    alignContent: 'center',
   },
 
   texts: {
-    flex: 1,
+    flex: 0.6,
   },
 
   title: {
-    fontWeight: '800',
+    fontWeight: '400',
     fontSize: 28,
-    marginBottom: 10,
-    color: '#493d8a',
-    textAlign: 'center'
+    paddingVertical: 10,
+    color: colors.title,
+    textAlign: 'center',
+    fontFamily: fonts.title
   },
 
   description: {
     fontWeight: '300',
-    color: '#493d8a',
+    color: colors.subTitle,
     textAlign: 'center',
-    paddingHorizontal: 64
+    paddingHorizontal: 64,
+    fontFamily: fonts.subTitle
   },
   
 })
